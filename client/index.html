@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>base</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="description" content="Base">
+  <base href="/">
+  <link rel="stylesheet" href="styles.min.css">
+  <script src="lib/underscore/underscore-min.js"></script>
+  <script src="lib/angular/angular.min.js"></script>
+  <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="lib/angular-sanitize/angular-sanitize.min.js"></script>
+</head>
+<body>
+  <div class="main" ui-view></div>
+  <script src="app.js"></script>
+  <script src="components/header/header.directive.js"></script>
+  <script src="components/footer/footer.directive.js"></script>
+  <script src="components/home/home.controller.js"></script>
+  <script src="components/home/home.factory.js"></script>
+  <script src="lib/jquery/dist/jquery.min.js"></script>
+  <script src="lib/foundation-sites/dist/foundation.min.js"></script>
+  <script src="lib/what-input/what-input.min.js"></script>
+  <script>
+    $(document).foundation();
+  </script>
+</body>
+</html>
