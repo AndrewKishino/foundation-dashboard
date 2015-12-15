@@ -35,12 +35,12 @@
 
   var paths = {
     sass: ['./client/sass/**/*.scss'],
-    scripts: ['./gulpfile.js', './client/**/*.js', '!./client/lib/**/*.js', './server/**/*.js']
+    scripts: ['./gulpfile.js', './client/**/*.js', '!./client/lib/**/*.js', './server/**/*.js', '!./client/js/*.js']
   };
 
   var sassPaths = [
-    './client/lib/foundation-sites/scss',
-    './client/lib/motion-ui/src'
+    './client/lib/font-awesome/scss',
+    './node_modules/bourbon/app/assets/stylesheets'
   ];
 
   /**

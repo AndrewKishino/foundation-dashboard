@@ -1,18 +1,17 @@
-/* home.factory.js */
+/* dash.factory.js */
 (function() {
 
   angular
     .module('app')
-    .factory('homeFactory', homeFactory);
+    .factory('dashFactory', dashFactory);
 
     /**
-     * ferdFactory
+     * dashFactory
      * 
-     * @description Factory for interfacing with FerdX server for all available
-     *   modules with MegaFerd server.
+     * @description Factory for interfacing with server for all available.
      * @return {Object} The factory
      */
-    function homeFactory($q, $http) {
+    function dashFactory($q, $http) {
 
       var factory = {
 

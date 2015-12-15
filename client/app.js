@@ -27,9 +27,9 @@
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
-      .state('home', {
+      .state('dash', {
         url: '/',
-        templateUrl: 'components/home/home.html'
+        templateUrl: 'components/dash/dash.html'
       });
 
     $locationProvider.html5Mode(true);
