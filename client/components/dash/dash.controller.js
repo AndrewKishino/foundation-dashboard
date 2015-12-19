@@ -62,14 +62,21 @@
       $('.has-children > a').on('click', function(event){
         var mq = checkMQ(),
           selectedItem = $(this);
-        if( mq == 'mobile' || mq == 'tablet' ) {
+        if( mq == 'mobile' ) {
           event.preventDefault();
-          if( selectedItem.parent('li').hasClass('selected')) {
-            selectedItem.parent('li').removeClass('selected');
+          if( selectedItem.parent('li').hasClass('active')) {
+            selectedItem.parent('li').removeClass('active');
           } else {
-            sidebar.find('.has-children.selected').removeClass('selected');
-            accountInfo.removeClass('selected');
-            selectedItem.parent('li').addClass('selected');
+            sidebar.find('.has-children.active').removeClass('active');
+            accountInfo.removeClass('active');
+            selectedItem.parent('li').addClass('active');
+          }
+        } else {
+          event.preventDefault();
+          if( !selectedItem.parent('li').hasClass('active')) {
+            sidebar.find('.has-children.active').removeClass('active');
+            accountInfo.removeClass('active');
+            selectedItem.parent('li').addClass('active');
           }
         }
       });

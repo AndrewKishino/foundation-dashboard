@@ -3430,18 +3430,23 @@ Sidebar
   background: url(../img/arrow.svg);
 }
 
-.has-children.selected > ul {
-  display: block;
-}
-
-.has-children.selected > a::after {
+.has-children.active > a::after {
   -webkit-transform: translateY(-50%) rotate(180deg);
   transform: translateY(-50%) rotate(180deg);
+}
+
+@media only screen and (max-width: 480px) {
+  .has-children.active > ul {
+    display: block;
+  }
 }
 
 @media only screen and (min-width: 768px) {
   .has-children {
     position: relative;
+  }
+  .has-children.active:hover > ul {
+    display: block;
   }
   .has-children ul {
     position: absolute;
@@ -3462,7 +3467,7 @@ Sidebar
   .has-children > a::after {
     display: none;
   }
-  .side-nav .has-children.selected > a {
+  .side-nav .has-children.active > a {
     /* focus state -> show sub pages */
     background-color: #33383e;
   }
@@ -3499,6 +3504,9 @@ Sidebar
   }
   .has-children ul a {
     padding-left: 18px;
+  }
+  .has-children.active:hover > ul {
+    display: block;
   }
   .has-children.active > ul {
     /* if the item is active, make the subnavigation visible */

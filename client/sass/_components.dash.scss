@@ -633,15 +633,21 @@ Sidebar
     background: url(../img/arrow.svg);
   }
 
-  &.selected > ul {
-    display: block;
-  }
-
-  &.selected > a::after {
+  &.active > a::after {
     @include transform(translateY(-50%) rotate(180deg));
   }
 
+  @include MQ(SM) {
+    &.active > ul {
+      display: block;
+    }
+  }
+
   @include MQ(M) {
+    &.active:hover > ul {
+      display: block;
+    }
+
     position: relative;
     
     ul { 
@@ -668,7 +674,7 @@ Sidebar
     }
 
     .side-nav & {
-      &.selected > a {
+      &.active > a {
         /* focus state -> show sub pages */
         background-color: darken($color-1, 5%);
       }
@@ -713,6 +719,10 @@ Sidebar
 
     ul a {
       padding-left: 18px;
+    }
+
+    &.active:hover > ul {
+      display: block;
     }
 
     &.active > ul {
