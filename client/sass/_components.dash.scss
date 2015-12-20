@@ -633,8 +633,8 @@ Sidebar
     background: url(../img/arrow.svg);
   }
 
-  &.active > a::after {
-    @include transform(translateY(-50%) rotate(180deg));
+  &.active:hover > ul {
+    display: block;
   }
 
   @include MQ(SM) {
@@ -643,11 +643,11 @@ Sidebar
     }
   }
 
-  @include MQ(M) {
-    &.active:hover > ul {
-      display: block;
-    }
+  &.active > a::after {
+    @include transform(translateY(-50%) rotate(180deg));
+  }
 
+  @include MQ(M) {
     position: relative;
     
     ul { 
@@ -719,10 +719,6 @@ Sidebar
 
     ul a {
       padding-left: 18px;
-    }
-
-    &.active:hover > ul {
-      display: block;
     }
 
     &.active > ul {

@@ -19,7 +19,9 @@
   function DashController($state) {
     var vm = this;
 
-    init();
+    $(function() {
+      init();
+    });
 
     function init() {
       var mainContent = $('.main-content'),
@@ -71,6 +73,15 @@
             accountInfo.removeClass('active');
             selectedItem.parent('li').addClass('active');
           }
+        } else if( mq == 'tablet' ) {
+          event.preventDefault();
+          if( selectedItem.parent('li').hasClass('active')) {
+            // selectedItem.parent('li').removeClass('active');
+          } else {
+            sidebar.find('.has-children.active').removeClass('active');
+            accountInfo.removeClass('active');
+            selectedItem.parent('li').addClass('active');
+          }
         } else {
           event.preventDefault();
           if( !selectedItem.parent('li').hasClass('active')) {
@@ -87,17 +98,17 @@
           selectedItem = $(this);
         if( mq == 'desktop') {
           event.preventDefault();
-          accountInfo.toggleClass('selected');
-          sidebar.find('.has-children.selected').removeClass('selected');
+          accountInfo.toggleClass('active');
+          sidebar.find('.has-children.active').removeClass('active');
         }
       });
 
-      $(document).on('click', function(event){
-        if( !$(event.target).is('.has-children a') ) {
-          sidebar.find('.has-children.selected').removeClass('selected');
-          accountInfo.removeClass('selected');
-        }
-      });
+      // $(document).on('click', function(event){
+      //   if( !$(event.target).is('.has-children a') ) {
+      //     sidebar.find('.has-children.active').removeClass('active');
+      //     accountInfo.removeClass('active');
+      //   }
+      // });
 
       //on desktop - differentiate between a user trying to hover over a dropdown item vs trying to navigate into a submenu's contents
       sidebar.children('ul').menuAim({
@@ -142,7 +153,7 @@
 
       function checkSelected(mq) {
         //on desktop, remove selected class from items selected on mobile/tablet version
-        if( mq == 'desktop' ) $('.has-children.selected').removeClass('selected');
+        if( mq == 'mobile' ) $('.has-children.active').removeClass('active');
       }
 
       function checkScrollbarPosition() {

@@ -3430,9 +3430,8 @@ Sidebar
   background: url(../img/arrow.svg);
 }
 
-.has-children.active > a::after {
-  -webkit-transform: translateY(-50%) rotate(180deg);
-  transform: translateY(-50%) rotate(180deg);
+.has-children.active:hover > ul {
+  display: block;
 }
 
 @media only screen and (max-width: 480px) {
@@ -3441,12 +3440,14 @@ Sidebar
   }
 }
 
+.has-children.active > a::after {
+  -webkit-transform: translateY(-50%) rotate(180deg);
+  transform: translateY(-50%) rotate(180deg);
+}
+
 @media only screen and (min-width: 768px) {
   .has-children {
     position: relative;
-  }
-  .has-children.active:hover > ul {
-    display: block;
   }
   .has-children ul {
     position: absolute;
@@ -3504,9 +3505,6 @@ Sidebar
   }
   .has-children ul a {
     padding-left: 18px;
-  }
-  .has-children.active:hover > ul {
-    display: block;
   }
   .has-children.active > ul {
     /* if the item is active, make the subnavigation visible */
